@@ -1,17 +1,17 @@
-﻿using Models.Enums;
+﻿using Models.DbModels;
+using Models.Enums;
 
-namespace Models.DbModels;
+namespace Models.DTOs.CarDTOs;
 
-public class Car : BaseEntity
+public record CarDto
 {
     public Guid CarBrandId { get; set; }
-    public CarBrand CarBrand { get; set; }
+    public string CarBrandName { get; set; }
     
     public Guid CarModelId { get; set; }
-    public CarModel CarModel { get; set; }
-    
+    public string CarModelName { get; set; }
+
     public Guid ClientId { get; set; }
-    public Client Client { get; set; }
     
     public DateTime ManufactureDate { get; set; }
     
@@ -19,6 +19,4 @@ public class Car : BaseEntity
     
     //EnginePower in kilowatts
     public double EnginePower { get; set; }
-
-    public List<Master> Masters { get; set; } = new();
 }
