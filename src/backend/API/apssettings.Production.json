@@ -4,5 +4,8 @@
       "Default": "Information",
       "Microsoft.AspNetCore": "Warning"
     }
+  },
+  "ConnectionStrings": {
+    "DbConnection": "Host=dpg-civud7tph6em9eq2sni0-a.singapore-postgres.render.com;Port=5432;Database=dsr_h45n;Username=anvar;Password=g2Yw5Ijq6zYNrsTeGwG8WNHQgIS4AbRJ;"
   }
 }

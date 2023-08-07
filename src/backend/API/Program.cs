@@ -1,4 +1,4 @@
-using API.Extensions;
+using Logic.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +9,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddAppServices(builder.Configuration);
+builder.Services
+    .AddDatabase(builder.Configuration)
+    .AddAutomapper()
+    .AddRepositories();
 
 var app = builder.Build();
 
