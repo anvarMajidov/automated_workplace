@@ -9,6 +9,7 @@ public class CarModelConfiguration : IEntityTypeConfiguration<CarModel>
     public void Configure(EntityTypeBuilder<CarModel> builder)
     {
         builder.Property(b => b.Name)
+            .HasMaxLength(255)
             .IsRequired();
         
         builder.HasOne(c => c.Brand)

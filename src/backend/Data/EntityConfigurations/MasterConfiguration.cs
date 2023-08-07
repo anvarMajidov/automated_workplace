@@ -8,8 +8,19 @@ public class MasterConfiguration : IEntityTypeConfiguration<Master>
 {
     public void Configure(EntityTypeBuilder<Master> builder)
     {
-        builder.Property(m => m.Surname).IsRequired();
-        builder.Property(m => m.Name).IsRequired();
-        builder.Property(m => m.Patronymic).IsRequired(false);
+        builder.Property(m => m.Surname)
+            .HasMaxLength(255)
+            .IsRequired();
+        
+        builder.Property(m => m.Name)
+            .HasMaxLength(255)
+            .IsRequired();
+        
+        builder.Property(m => m.Patronymic)
+            .HasMaxLength(255)
+            .IsRequired(false);
+        
+        builder.HasMany(m => m.Cars)
+            .WithMany(c => c.Masters);
     }
 }

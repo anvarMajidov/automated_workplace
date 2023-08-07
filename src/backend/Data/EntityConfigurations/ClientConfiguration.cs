@@ -17,6 +17,7 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
             .HasMaxLength(255);
 
         builder.Property(p => p.Patronymic)
+            .HasMaxLength(255)
             .IsRequired(false);
 
         builder.Property(p => p.Phone)

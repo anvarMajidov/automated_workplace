@@ -23,6 +23,9 @@ public class CarConfiguration : IEntityTypeConfiguration<Car>
             .HasForeignKey(c => c.ClientId)
             .IsRequired(false);
 
+        builder.HasMany(c => c.Masters)
+            .WithMany(m => m.Cars);
+
         builder.Property(c => c.ManufactureDate)
             .IsRequired();
 
